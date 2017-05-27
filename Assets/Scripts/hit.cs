@@ -98,6 +98,10 @@ public class hit : MonoBehaviour {
 			rb.AddForce (transform.right * thrust);
 
 		}
+		Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
+		if (Physics.Raycast(transform.position, fwd, 100))
+			Debug.Log("There is something in front of the object!");
 	
 	}
 		
