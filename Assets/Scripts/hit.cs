@@ -8,7 +8,6 @@ public class hit : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		InvokeRepeating("NextChance",5f);
 			
 	}
 	
@@ -35,8 +34,7 @@ public class hit : MonoBehaviour {
         {
 					Debug.Log("Up");
         }*/
-		if (Throw.ready_to_throw_ball)
-		{
+		
 		if (Input.GetKeyDown (KeyCode.DownArrow)) {
 			Debug.Log ("Down");
 			transform.Rotate (0, -45, 0);
@@ -100,24 +98,7 @@ public class hit : MonoBehaviour {
 			rb.AddForce (transform.right * thrust);
 
 		}
-		//Wait ();
+	
 	}
-	}
-
-    
-
-	IEnumerator Wait()
-	{
-		yield return new WaitForSeconds(10);
-
-	}
-
-	void NextChance()
-	{
-		transform.rotation.Set (-90, 0, 90, 0);
-		Rigidbody rb = GetComponent<Rigidbody>();
-		rb.isKinematic = false;
-		Throw.ready_to_throw_ball = true;
-
-	}
+		
 }
