@@ -53,6 +53,7 @@ public class Throw : MonoBehaviour {
 		ball_rb.transform.position = Vector3.MoveTowards(ball_rb.transform.position,bat.transform.position, step);
 
 		//after hit by bat destroy it
+        //emd here
 	}
 
 
