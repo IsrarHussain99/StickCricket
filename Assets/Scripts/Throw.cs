@@ -6,6 +6,8 @@ public class Throw : MonoBehaviour {
 
 	public GameObject ball_prefab;
 	public GameObject bat;
+	public float BallSpeed;
+	//set ball speed in editor.
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +46,7 @@ public class Throw : MonoBehaviour {
 		ball_rb.AddForce (-horizontal_force*Mathf.Sin(horizontal_angle),0,-horizontal_force*Mathf.Cos(horizontal_angle),ForceMode.Impulse);
 		*/
 
-		float speed = 20f;
+		float speed = BallSpeed; // this = BallSpeed;
 		float step = speed * Time.deltaTime;
 		Vector3 direction = (bat.transform.position - ball_rb.transform.position);
 		direction.Normalize();
